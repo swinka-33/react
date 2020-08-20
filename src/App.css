@@ -1,0 +1,7 @@
+.App {
+  user-select: none;
+  width: 900px;
+  margin: auto;
+  padding-top: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+}

@@ -1,0 +1,10 @@
+.header {
+    height: 50px;
+    background-color: limegreen;
+}
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
