@@ -2,7 +2,23 @@
     height: 30px;
     padding: 5px;
     margin-left: 5px;
-    margin-top: 10px;
+    margin-top: 40px;
+}
+
+.imgLike {
+    width: 15px;
+    height: 15px;
+}
+
+.spanLike {
+    position: relative;
+    top: -2.5px;
+}
+
+.buttonLike {
+    border: none;
+    background-color: white;
+    outline: none;
 }
 
 .logo {
@@ -12,7 +28,6 @@
 
 .span {
     position: relative;
-    left: 45px;
     top: -35px;
     font-size: 15px;
 }

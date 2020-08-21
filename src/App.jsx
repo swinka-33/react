@@ -8,9 +8,10 @@ import PostDiv from './Components/Post/PostDiv';
 const App = () => {
     return ( <div className={AppStyle.App}>
 
-        <Header/>
+        <Header imgLogo='https://image.flaticon.com/icons/svg/2760/2760147.svg' />
         <Menu/>
-        <Context/>
+        <Context imgLogo='https://image.flaticon.com/icons/svg/2569/2569923.svg' town='Moscow' date='15 December' 
+        education='school' site='https://github.com' userName='Sasha K.'/>
         <PostDiv/>
 
     </div> );

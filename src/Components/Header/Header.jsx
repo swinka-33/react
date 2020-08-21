@@ -1,10 +1,10 @@
 import React from 'react';
 import  HeaderStyle from './Header.module.css';;
 
-const Header = () => {
+const Header = (props) => {
     return ( <div className={HeaderStyle.header}>
 
-        <img src='https://image.flaticon.com/icons/svg/2760/2760147.svg' className={HeaderStyle.logo}/>
+        <img src={props.imgLogo} className={HeaderStyle.logo}/>
 
     </div> );
 };
