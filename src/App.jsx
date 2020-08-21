@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
+import AppStyle from './App.module.css';
 import Header from './Header';
 import Menu from './Menu';
 import Context from './Context';
 
 const App = () => {
-    return ( <div className='App'>
+    return ( <div className={AppStyle.App}>
 
         <Header/>
         <Menu/>

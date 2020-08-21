@@ -1,13 +1,13 @@
 .Menu {
     float: left;
 }
-.div-main {
+.divMain {
     width: 180px;
     height: 80vh;
     background-color: limegreen;
     margin-top: 10px;
 }
-.div-main div {
+.divMain div {
     font-size: 20px;
     color: #efefef;
     margin-left: 20px;

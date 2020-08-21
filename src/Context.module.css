@@ -20,12 +20,12 @@
     margin-top: 10px;
     color: #3F3E41;
 }
-.div-1 {
+.divOne {
     width: 100px;
     height: 100px;
     float: left;
 }
-.div-2 {
+.divTwo {
     float: left;
     margin-left: 40px;
 }
@@ -51,7 +51,7 @@
     width: 690px;
     background-color: #efefef;
 }
-.input-1 {
+.inputOne {
     outline: none;
     background-color: #efefef;
     border: 0px;
