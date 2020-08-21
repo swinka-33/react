@@ -1,8 +1,9 @@
 import React from 'react';
 import AppStyle from './App.module.css';
-import Header from './Header';
-import Menu from './Menu';
-import Context from './Context';
+import Header from './Components/Header/Header';
+import Menu from './Components/Menu/Menu';
+import Context from './Components/Context/Context';
+import PostDiv from './Components/Post/PostDiv';
 
 const App = () => {
     return ( <div className={AppStyle.App}>
@@ -10,6 +11,7 @@ const App = () => {
         <Header/>
         <Menu/>
         <Context/>
+        <PostDiv/>
 
     </div> );
 };

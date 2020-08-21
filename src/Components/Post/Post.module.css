@@ -1,0 +1,18 @@
+.Post {
+    height: 30px;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+}
+
+.span {
+    position: relative;
+    left: 45px;
+    top: -35px;
+    font-size: 15px;
+}
