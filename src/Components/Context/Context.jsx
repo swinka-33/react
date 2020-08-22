@@ -1,5 +1,6 @@
 import React from 'react';
 import ContextStyle from './Context.module.css';
+import PostDiv from './Post/PostDiv'
 
 const Context = (props) => {
     return ( <div className={ContextStyle.Context}>
@@ -30,6 +31,7 @@ const Context = (props) => {
         <div className={ContextStyle.send}>
             Send
         </div>
+        <PostDiv/>
     </div> );
 };
 

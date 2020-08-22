@@ -3,18 +3,17 @@ import AppStyle from './App.module.css';
 import Header from './Components/Header/Header';
 import Menu from './Components/Menu/Menu';
 import Context from './Components/Context/Context';
-import PostDiv from './Components/Post/PostDiv';
+import img from './logo192.png';
 
-const App = () => {
+const Profile = () => {
     return ( <div className={AppStyle.App}>
 
-        <Header imgLogo='https://image.flaticon.com/icons/svg/2760/2760147.svg' />
+        <Header imgLogo={img} />
         <Menu/>
         <Context imgLogo='https://image.flaticon.com/icons/svg/2569/2569923.svg' town='Moscow' date='15 December' 
         education='school' site='https://github.com' userName='Sasha K.'/>
-        <PostDiv/>
 
     </div> );
 };
 
-export default App;
+export default Profile;
