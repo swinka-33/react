@@ -3,21 +3,21 @@ import ContextStyle from './Context.module.css';
 import PostDiv from './Post/PostDiv'
 
 const Context = (props) => {
-    return ( <div className={ContextStyle.Context}>
+    return (<div className={ContextStyle.Context}>
 
-        <img src='https://im0-tub-ru.yandex.net/i?id=01759267cdb1aa4247383ad8ce568d23&n=13' className={ContextStyle.img}/>
+        <img src='https://im0-tub-ru.yandex.net/i?id=01759267cdb1aa4247383ad8ce568d23&n=13' className={ContextStyle.img} />
         <div className={ContextStyle.divLogo}>
             <div className={ContextStyle.divOne}>
-                <img className={ContextStyle.logoImg} src={props.imgLogo}/>
+                <img className={ContextStyle.logoImg} src={props.imgLogo} />
             </div>
             <div className={ContextStyle.divTwo}>
                 <span className={ContextStyle.name}>
                     {props.userName}
-                </span><br/>
+                </span><br />
                 <div className={ContextStyle.infoAbout}>
-                    Date of Birth: {props.date}<br/>
-                    City: {props.town}<br/>
-                    Education: {props.education}<br/>
+                    Date of Birth: {props.date}<br />
+                    City: {props.town}<br />
+                    Education: {props.education}<br />
                     Web Site: {props.site}
                 </div>
             </div>
@@ -26,13 +26,13 @@ const Context = (props) => {
             My post
         </div>
         <div className={ContextStyle.input}>
-            <input placeholder='your news...' className={ContextStyle.inputOne}/>
+            <input placeholder='your news...' className={ContextStyle.inputOne} />
         </div>
         <div className={ContextStyle.send}>
             Send
         </div>
-        <PostDiv/>
-    </div> );
+        <PostDiv />
+    </div>);
 };
 
 export default Context;

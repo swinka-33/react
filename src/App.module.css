@@ -5,3 +5,8 @@
   padding-top: 10px;
   font-family: 'Noto Sans JP', sans-serif;
 }
+
+.content {
+  width: 705px;
+  float: left;
+}
