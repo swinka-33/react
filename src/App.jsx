@@ -5,19 +5,25 @@ import Menu from './Components/Menu/Menu';
 import Context from './Components/Context/Context';
 import img from './logo192.png';
 import Message from './Components/Message/Message';
+import { Route, BrowserRouter } from "react-router-dom";
+import News from './Components/News/News';
+import Music from './Components/Music/Music';
+import Settings from './Components/Settings/Settings';
 
 const App = (props) => {
-    return (<div className={AppStyle.App}>
+    return (<BrowserRouter><div className={AppStyle.App}>
 
         <Header imgLogo={img} />
         <Menu />
         <div className={AppStyle.content}>
-            {/* <Context imgLogo='https://image.flaticon.com/icons/svg/2569/2569923.svg' town='Moscow' date='15 December'
-            education='school' site='https://github.com' userName='Sasha K.' /> */}
-            <Message />
+            <Route path='/Profile' component={Context} />
+            <Route path='/Message' component={Message} />
+            <Route path='/News' component={News} />
+            <Route path='/Music' component={Music} />
+            <Route path='/Settings' component={Settings} />
         </div>
 
-    </div>);
+    </div></BrowserRouter>);
 };
 
 export default App;

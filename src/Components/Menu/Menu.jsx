@@ -5,11 +5,11 @@ const Menu = (props) => {
     return (<div className={MenuStyle.Menu}>
 
         <div className={MenuStyle.divMain}>
-            <div>Profile</div>
-            <div>Messages</div>
-            <div>News</div>
-            <div>Music</div>
-            <div className={MenuStyle.margin}>Settings</div>
+            <div><a href='/Profile'>Profile</a></div>
+            <div><a href='/Message'>Message</a></div>
+            <div><a href='/News'>News</a></div>
+            <div><a href='/Music'>Music</a></div>
+            <div className={MenuStyle.margin}><a href='/Settings'>Settings</a></div>
         </div>
 
     </div>);
