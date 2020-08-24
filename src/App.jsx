@@ -11,19 +11,21 @@ import Music from './Components/Music/Music';
 import Settings from './Components/Settings/Settings';
 
 const App = (props) => {
-    return (<BrowserRouter><div className={AppStyle.App}>
+    return (<BrowserRouter>
+        <div className={AppStyle.App}>
 
-        <Header imgLogo={img} />
-        <Menu />
-        <div className={AppStyle.content}>
-            <Route path='/Profile' component={Context} />
-            <Route path='/Message' component={Message} />
-            <Route path='/News' component={News} />
-            <Route path='/Music' component={Music} />
-            <Route path='/Settings' component={Settings} />
+            <Header imgLogo={img} />
+            <Menu />
+            <div className={AppStyle.content}>
+                <Route path='/Profile' component={Context} />
+                <Route path='/Message' component={Message} />
+                <Route path='/News' component={News} />
+                <Route path='/Music' component={Music} />
+                <Route path='/Settings' component={Settings} />
+            </div>
+
         </div>
-
-    </div></BrowserRouter>);
+    </BrowserRouter>);
 };
 
 export default App;
