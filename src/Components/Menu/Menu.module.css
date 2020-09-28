@@ -8,11 +8,10 @@
     margin-top: 10px;
 }
 .goldenrod {
-    color: goldenrod;
+    color: white;
 }
 .divMain div {
     font-size: 20px;
-    color: #efefef;
     margin-left: 20px;
     margin-top: 5px;
 }
@@ -21,6 +20,6 @@
 }
 
 a {
-    color: #efefef;
+    color: #eee3e3;
     text-decoration: none;
 }

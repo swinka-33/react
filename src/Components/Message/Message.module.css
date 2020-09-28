@@ -7,6 +7,7 @@
 .friends {
     width: 250px;
     float: left;
+    padding-top: 20px;
 }
 
 .messages {
@@ -25,39 +26,38 @@
 .dialog {
     width: 250px;
     font-size: 16px;
-    color: grey;
     height: 50px;
+    color: grey;
 }
 
-.bottom {
-    margin-top: 20px;
-    width: 250px;
-    font-size: 16px;
-    color: grey;
-    height: 50px;
+.size {
+    font-size: 20px;
 }
-
-/* .size {
-    font-size: 18px;
-} */
 
 .userMessageLeft {
-    width: 200px;
-    border-radius: 10px;
-    padding: 10px;
-    border: 2px solid #e4dfdf;
-    margin-top: 30px;
-}
-
-.userMessageRight {
-    width: 200px;
-    border-radius: 10px;
-    padding: 10px;
-    border: 2px solid #e4dfdf;
-    margin-top: 30px;
-    margin-left: 75px;
+    width: 300px;
 }
 
 .first {
-    margin-top: 10px;
+    margin-top: -10px;
+}
+
+.avotarky {
+    width: 40px;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.spanBort {
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid #e4dfdf;
+    float: left;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.img {
+    float: left;
 }
