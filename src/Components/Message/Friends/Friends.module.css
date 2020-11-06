@@ -1,0 +1,10 @@
+.dialog {
+    width: 250px;
+    font-size: 16px;
+    height: 50px;
+    color: grey;
+}
+
+.size {
+    font-size: 20px;
+}

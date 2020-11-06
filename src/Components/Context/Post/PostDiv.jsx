@@ -1,6 +1,7 @@
 import React from 'react';
 import PostDivStyle from './PostDiv.module.css';
-import Post from './Post'
+import Post from './Post';
+// import { posts } from './../../../index';
 
 const PostDiv = () => {
 

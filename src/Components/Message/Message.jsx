@@ -1,23 +1,9 @@
 import React from 'react';
 import MessageStyle from './Message.module.css';
-import { NavLink } from 'react-router-dom';
-
-const Dialog = (props) => {
-    return (<div className={MessageStyle.userMessageLeft}>
-        <div className={MessageStyle.img}>
-            <img src={props.img} className={MessageStyle.avotarky} />
-        </div>
-        <div className={MessageStyle.spanBort}>{props.text}</div>
-    </div>);
-};
-
-const Friends = (props) => {
-    return (<div className={MessageStyle.dialog} >
-        <li>
-            <NavLink activeClassName={MessageStyle.size} to={props.userId}><b>{props.userName}</b></NavLink>
-        </li>
-    </div>);
-};
+import Friends from './Friends/Friends';
+import Dialog from './Dialog/Dialog';
+// import { friends } from './../../index';
+// import { messages } from './../../index';
 
 let noNameImg = 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg'
 
@@ -30,10 +16,8 @@ const Message = (props) => {
         { id: '/Message/4', name: 'Vika' },
         { id: '/Message/5', name: 'Alica' },
         { id: '/Message/6', name: 'Sveta' }
-    ];
-
-    const friendsElements = friends.map( element => <Friends userName={element.name} userId={element.id}/> );
-
+      ];
+      
     const messages = [
         { url: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: "Hello, Anton!!! How are you? Where are you bro?" },
         { url: 'https://image.flaticon.com/icons/svg/145/145867.svg', text: "I'm ok)) How are you bro? I think that your WEBSITE was finished?" },
@@ -41,6 +25,8 @@ const Message = (props) => {
         { url: 'https://image.flaticon.com/icons/svg/145/145867.svg', text: "Oh, sorry, I haven't free time, I must rut to my course)) See you bro))" },
         { url: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: "See you bro)) Goodby!!!" }
     ];
+
+    const friendsElements = friends.map( element => <Friends userName={element.name} userId={element.id}/> );
 
     const messagesElements = messages.map( elememnt => <Dialog img={elememnt.url} text={elememnt.text} /> );
 
