@@ -10,30 +10,19 @@ import News from './Components/News/News';
 import Music from './Components/Music/Music';
 import Settings from './Components/Settings/Settings';
 
-let ContextComponent = () => <Context/>;
-let MessageComponent = () => <Message/>;
-let NewsComponent = () => <News/>;
-let MusicComponent = () => <Music/>;
-let SettingsComponent = () => <Settings/>;
-
 const App = (props) => {
+
     return (<BrowserRouter>
         <div className={AppStyle.App}>
 
             <Header imgLogo={img} />
             <Menu />
             <div className={AppStyle.content}>
-                {/* <Route path='/Profile' component={Context} />
-                <Route path='/Message' component={Message} />
-                <Route path='/News' component={News} />
-                <Route path='/Music' component={Music} />
-                <Route path='/Settings' component={Settings} /> */}
-
-                <Route path='/Profile' render={ ContextComponent } />
-                <Route path='/Message' render={ MessageComponent } />
-                <Route path='/News' render={ NewsComponent } />
-                <Route path='/Music' render={ MusicComponent } />
-                <Route path='/Settings' render={ SettingsComponent } />
+                <Route path='/Profile' render={ () => <Context posts={props.posts}/> } />
+                <Route path='/Message' render={ () => <Message messages={props.messages} friends={props.friends}/> } />
+                <Route path='/News' render={ () => <News /> } />
+                <Route path='/Music' render={ () => <Music /> } />
+                <Route path='/Settings' render={ () => <Settings /> } />
             </div>
 
         </div>
