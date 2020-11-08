@@ -18,7 +18,7 @@ const Context = (props) => {
         <div className={ContextStyle.send}>
             Send
         </div>
-        <PostDiv posts={props.posts}/>
+        <PostDiv posts={props.state.posts}/>
     </div>);
 };
 

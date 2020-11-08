@@ -1,0 +1,32 @@
+.FriendsMenu {
+    width: 54px;
+    height: 40vh;
+    float: left;
+    text-align: center;
+}
+
+.person {
+    height: 60px;
+    width: 40px;
+    padding-top: 10px;
+    text-align: center;
+    margin-left: 14px;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+}
+
+.imgDiv {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: orange;
+}
+
+.name {
+    font-size: 12px;
+    color: #efefef;
+}

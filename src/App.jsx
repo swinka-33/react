@@ -16,10 +16,15 @@ const App = (props) => {
         <div className={AppStyle.App}>
 
             <Header imgLogo={img} />
-            <Menu />
+            <Menu 
+                state={props.state.menuPage}/>
             <div className={AppStyle.content}>
-                <Route path='/Profile' render={ () => <Context posts={props.posts}/> } />
-                <Route path='/Message' render={ () => <Message messages={props.messages} friends={props.friends}/> } />
+                <Route path='/Profile' 
+                    render={ () => <Context 
+                        state={props.state.contextPage}/> } />
+                <Route path='/Message' 
+                    render={ () => <Message 
+                        state={props.state.messagePage}/> } />
                 <Route path='/News' render={ () => <News /> } />
                 <Route path='/Music' render={ () => <Music /> } />
                 <Route path='/Settings' render={ () => <Settings /> } />
