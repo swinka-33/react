@@ -26,3 +26,32 @@
 .first {
     margin-top: -10px;
 }
+
+.inputDiv {
+    width: 300px;
+    height: 100px;
+}
+
+.input {
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    background-color: #efefef;
+    outline: none;
+    border: none;
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+.send {
+    width: 70px;
+    height: 28px;
+    background-color: limegreen;
+    outline: none;
+    border: 1px solid #aaaaaa;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 200px;
+}

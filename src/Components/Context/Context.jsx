@@ -5,6 +5,12 @@ import ContextInfo from './ContextInfo/ContextInfo';
 
 const Context = (props) => {
 
+    const addPost = () => {
+        return alert(newPost.current.value); 
+    }    
+
+    let newPost = React.createRef();
+
     return (<div className={ContextStyle.Context}>
 
         <img src='https://im0-tub-ru.yandex.net/i?id=01759267cdb1aa4247383ad8ce568d23&n=13' className={ContextStyle.img} />
@@ -13,11 +19,11 @@ const Context = (props) => {
             My post
         </div>
         <div className={ContextStyle.input}>
-            <input placeholder='your news...' className={ContextStyle.inputOne} />
+            <input ref={newPost} placeholder='your news...' className={ContextStyle.inputOne} />
         </div>
-        <div className={ContextStyle.send}>
+        <button onClick={ addPost } className={ContextStyle.send}>
             Send
-        </div>
+        </button>
         <PostDiv posts={props.state.posts}/>
     </div>);
 };
