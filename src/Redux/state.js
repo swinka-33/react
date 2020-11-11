@@ -18,8 +18,8 @@ const state = {
     },
     contextPage: {
         posts: [
-            { imgLogoPost: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: 'I have many problem', like: '43'},
-            { imgLogoPost: 'https://image.flaticon.com/icons/svg/145/145867.svg', text: 'I too', like: '31'}
+            { id: 1, imgLogoPost: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: 'I have many problem', like: '43'},
+            { id: 2, imgLogoPost: 'https://image.flaticon.com/icons/svg/145/145867.svg', text: 'I too', like: '31'}
         ]
     },
     menuPage: {
@@ -30,5 +30,17 @@ const state = {
         ]
     }
 };
+
+export const addPost = (messageText) => {
+    debugger;
+    let newPost = {
+        id: 3,
+        imgLogoPost: 'https://image.flaticon.com/icons/svg/145/145859.svg',
+        text: messageText,
+        like: '37'
+    }
+
+    state.contextPage.posts.push(newPost);
+}  
 
 export default state;

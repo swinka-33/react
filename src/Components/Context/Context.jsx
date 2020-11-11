@@ -6,10 +6,12 @@ import ContextInfo from './ContextInfo/ContextInfo';
 const Context = (props) => {
 
     const addPost = () => {
-        return alert(newPost.current.value); 
+        debugger;
+        let text = messageText.current.value;
+        props.addPost(text) 
     }    
 
-    let newPost = React.createRef();
+    let messageText = React.createRef();
 
     return (<div className={ContextStyle.Context}>
 
@@ -19,7 +21,7 @@ const Context = (props) => {
             My post
         </div>
         <div className={ContextStyle.input}>
-            <input ref={newPost} placeholder='your news...' className={ContextStyle.inputOne} />
+            <input ref={messageText} placeholder='your news...' className={ContextStyle.inputOne} />
         </div>
         <button onClick={ addPost } className={ContextStyle.send}>
             Send
