@@ -1,3 +1,6 @@
+import React from 'react';
+import { rerenderEntireTree } from './../render';
+
 const state = {
     messagePage: {
         friends: [
@@ -9,17 +12,12 @@ const state = {
             { id: '/Message/6', name: 'Sveta' }
         ],
         messages: [
-            { url: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: "Hello, Anton!!! How are you? Where are you bro?" },
-            { url: 'https://image.flaticon.com/icons/svg/145/145867.svg', text: "I'm ok)) How are you bro? I think that your WEBSITE was finished?" },
-            { url: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: "Yes! It is very difecalt, but i could do it! I'm very happy now))" },
-            { url: 'https://image.flaticon.com/icons/svg/145/145867.svg', text: "Oh, sorry, I haven't free time, I must rut to my course)) See you bro))" },
-            { url: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: "See you bro)) Goodby!!!" }
+            // { url: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: "text" }
         ]
     },
     contextPage: {
         posts: [
-            { id: 1, imgLogoPost: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: 'I have many problem', like: '43'},
-            { id: 2, imgLogoPost: 'https://image.flaticon.com/icons/svg/145/145867.svg', text: 'I too', like: '31'}
+            // { id: 1, imgLogoPost: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: 'I have many problem', like: '43'}
         ]
     },
     menuPage: {
@@ -31,16 +29,22 @@ const state = {
     }
 };
 
+let likeKounter = 3;
+let noNameImg = 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg'
+
 export const addPost = (messageText) => {
-    debugger;
     let newPost = {
-        id: 3,
-        imgLogoPost: 'https://image.flaticon.com/icons/svg/145/145859.svg',
+        id: likeKounter,
+        imgLogoPost: noNameImg,
         text: messageText,
-        like: '37'
+        like: '0'
     }
 
+    likeKounter += 1
+
     state.contextPage.posts.push(newPost);
+    rerenderEntireTree(state);
+
 }  
 
 export default state;

@@ -6,7 +6,6 @@ import ContextInfo from './ContextInfo/ContextInfo';
 const Context = (props) => {
 
     const addPost = () => {
-        debugger;
         let text = messageText.current.value;
         props.addPost(text) 
     }    
