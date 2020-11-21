@@ -6,9 +6,13 @@ import ContextInfo from './ContextInfo/ContextInfo';
 const Context = (props) => {
 
     const addPost = () => {
-        let text = messageText.current.value;
-        props.addPost(text) 
+        props.addPost();
     }    
+
+    const onPostChange = () => {
+        let text = messageText.current.value;
+        props.newChangeUpdate(text);
+    };
 
     let messageText = React.createRef();
 
@@ -20,7 +24,8 @@ const Context = (props) => {
             My post
         </div>
         <div className={ContextStyle.input}>
-            <input ref={messageText} placeholder='your news...' className={ContextStyle.inputOne} />
+            <textarea onChange={ onPostChange } ref={messageText} placeholder='your news...' className={ContextStyle.inputOne}
+            value={props.state.newTextPosts}/>
         </div>
         <button onClick={ addPost } className={ContextStyle.send}>
             Send

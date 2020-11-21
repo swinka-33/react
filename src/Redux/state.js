@@ -18,7 +18,8 @@ const state = {
     contextPage: {
         posts: [
             // { id: 1, imgLogoPost: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: 'I have many problem', like: '43'}
-        ]
+        ],
+        newTextPosts: ''
     },
     menuPage: {
         menuFriends: [
@@ -29,22 +30,28 @@ const state = {
     }
 };
 
-let likeKounter = 3;
-let noNameImg = 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg'
+let idKounter = 3;
+let noNameImg = 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg';
 
-export const addPost = (messageText) => {
+export const addPost = () => {
     let newPost = {
-        id: likeKounter,
+        id: idKounter,
         imgLogoPost: noNameImg,
-        text: messageText,
+        text: state.contextPage.newTextPosts,
         like: '0'
     }
 
-    likeKounter += 1
+    idKounter += 1;
 
     state.contextPage.posts.push(newPost);
+    state.contextPage.newTextPosts = '';
     rerenderEntireTree(state);
 
-}  
+}; 
+
+export const newChangeUpdate = (newText) => {
+    state.contextPage.newTextPosts = newText;
+    rerenderEntireTree(state);
+};
 
 export default state;

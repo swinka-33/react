@@ -9,7 +9,6 @@ import { Route, BrowserRouter } from "react-router-dom";
 import News from './Components/News/News';
 import Music from './Components/Music/Music';
 import Settings from './Components/Settings/Settings';
-import { addPost } from './Redux/state';
 
 const App = (props) => {
 
@@ -23,6 +22,7 @@ const App = (props) => {
                 <Route path='/Profile' 
                     render={ () => <Context 
                         state={props.state.contextPage}
+                        newChangeUpdate={props.newChangeUpdate}
                         addPost={props.addPost}/> } />
                 <Route path='/Message' 
                     render={ () => <Message 
