@@ -12,7 +12,8 @@ const Message = (props) => {
     const messagesElements = props.state.messages.map( elememnt => <Dialog img={elememnt.url} text={elememnt.text} /> );
 
     const newMessage = () => {
-        return alert(refMessage.current.value)
+        let text = refMessage.current.value;
+        return alert(text);
     }
 
     let refMessage = React.createRef();

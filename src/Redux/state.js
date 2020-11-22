@@ -1,5 +1,11 @@
-import React from 'react';
-import { rerenderEntireTree } from './../render';
+// import { rerenderEntireTree } from './../render';
+
+let rerenderEntireTree = () => {
+    console.log('Can\'t update');
+};
+
+let idKounter = 3;
+let noNameImg = 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg';
 
 const state = {
     messagePage: {
@@ -13,6 +19,7 @@ const state = {
         ],
         messages: [
             // { url: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: "text" }
+            { url: noNameImg, text: '/start' }
         ]
     },
     contextPage: {
@@ -29,9 +36,6 @@ const state = {
         ]
     }
 };
-
-let idKounter = 3;
-let noNameImg = 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg';
 
 export const addPost = () => {
     let newPost = {
@@ -52,6 +56,10 @@ export const addPost = () => {
 export const newChangeUpdate = (newText) => {
     state.contextPage.newTextPosts = newText;
     rerenderEntireTree(state);
+};
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 };
 
 export default state;
