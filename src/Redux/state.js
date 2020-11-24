@@ -18,7 +18,6 @@ const state = {
             { id: '/Message/6', name: 'Sveta' }
         ],
         messages: [
-            // { url: 'https://image.flaticon.com/icons/svg/145/145859.svg', text: "text" }
             { url: noNameImg, text: '/start' }
         ]
     },

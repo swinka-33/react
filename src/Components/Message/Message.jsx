@@ -3,20 +3,11 @@ import MessageStyle from './Message.module.css';
 import Friends from './Friends/Friends';
 import Dialog from './Dialog/Dialog';
 
-let noNameImg = 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg'
-
 const Message = (props) => {
 
     const friendsElements = props.state.friends.map( element => <Friends userName={element.name} userId={element.id}/> );
 
     const messagesElements = props.state.messages.map( elememnt => <Dialog img={elememnt.url} text={elememnt.text} /> );
-
-    const newMessage = () => {
-        let text = refMessage.current.value;
-        return alert(text);
-    }
-
-    let refMessage = React.createRef();
 
     return (<div className={MessageStyle.MessageMainDiv}>
 
@@ -29,8 +20,8 @@ const Message = (props) => {
         <div className={MessageStyle.messages}>
             { messagesElements }
             <div className={MessageStyle.inputDiv}>
-                <textarea ref={refMessage} placeholder='Your message' type='text' className={MessageStyle.input}></textarea>
-                <button onClick={ newMessage } className={MessageStyle.send}>
+                <textarea placeholder='Your message' type='text' className={MessageStyle.input}></textarea>
+                <button className={MessageStyle.send}>
                     Send
                 </button>
             </div>
