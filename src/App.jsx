@@ -16,7 +16,7 @@ const App = (props) => {
         <div className={AppStyle.App}>
 
             <Header imgLogo={img} />
-            <Menu 
+            <Menu
                 state={props.state.menuPage}/>
             <div className={AppStyle.content}>
                 <Route path='/Profile' 
