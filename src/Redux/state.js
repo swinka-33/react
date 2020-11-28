@@ -37,27 +37,28 @@ const store = {
     _callSubscriber() {
         console.log('Can\'t update');
     },
-    addPost() {
-        let newPost = {
-            id: this.idKounter,
-            imgLogoPost: this.noNameImg,
-            text: this._state.contextPage.newTextPosts,
-            like: '0'
-        }
-    
-        this.idKounter += 1;
-    
-        this._state.contextPage.posts.push(newPost);
-        this._state.contextPage.newTextPosts = '';
-        this._callSubscriber(store._state);
-    
-    },
-    newChangeUpdate(newText) {
-        this._state.contextPage.newTextPosts = newText;
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer;
+    },
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: this.idKounter,
+                imgLogoPost: this.noNameImg,
+                text: this._state.contextPage.newTextPosts,
+                like: '0'
+            }
+
+            this.idKounter += 1;
+
+            this._state.contextPage.posts.push(newPost);
+            this._state.contextPage.newTextPosts = '';
+            this._callSubscriber(store._state);
+        } else if (action.type === 'NEW-CHENGE-UPDATE') {
+            this._state.contextPage.newTextPosts = action.newText;
+            this._callSubscriber(this._state);
+        }
     }
 };
 

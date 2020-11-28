@@ -14,7 +14,6 @@ const App = (props) => {
 
     return (<BrowserRouter>
         <div className={AppStyle.App}>
-
             <Header imgLogo={img} />
             <Menu
                 state={props.state.menuPage}/>
@@ -22,8 +21,7 @@ const App = (props) => {
                 <Route path='/Profile' 
                     render={ () => <Context 
                         state={props.state.contextPage}
-                        newChangeUpdate={props.newChangeUpdate}
-                        addPost={props.addPost}/> } />
+                        dispatch={props.dispatch}/> } />
                 <Route path='/Message' 
                     render={ () => <Message 
                         state={props.state.messagePage}/> } />
@@ -31,7 +29,6 @@ const App = (props) => {
                 <Route path='/Music' render={ () => <Music /> } />
                 <Route path='/Settings' render={ () => <Settings /> } />
             </div>
-
         </div>
     </BrowserRouter>);
 };

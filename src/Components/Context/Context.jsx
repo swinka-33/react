@@ -6,12 +6,13 @@ import ContextInfo from './ContextInfo/ContextInfo';
 const Context = (props) => {
 
     const addPost = () => {
-        props.addPost();
+        props.dispatch({ type: 'ADD-POST' });
     }    
 
     const onPostChange = () => {
         let text = messageText.current.value;
-        props.newChangeUpdate(text);
+        let action = { type: 'NEW-CHENGE-UPDATE', newText: text};
+        props.dispatch(action);
     };
 
     let messageText = React.createRef();
