@@ -1,4 +1,6 @@
-// import { rerenderEntireTree } from './../render';
+// Types :
+const ADD_POST = 'ADD-POST';
+const NEW_CHENGE_UPDATE = 'NEW-CHENGE-UPDATE';
 
 const store = {
     _state : {
@@ -61,6 +63,10 @@ const store = {
         }
     }
 };
+
+export const addPostActionCreater = () => ({ type: ADD_POST });
+
+export const newChengeUpdate = (text) => ({ type: NEW_CHENGE_UPDATE, newText: text});
 
 export default store;
 window.store = store;

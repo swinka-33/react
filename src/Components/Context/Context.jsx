@@ -2,17 +2,17 @@ import React from 'react';
 import ContextStyle from './Context.module.css';
 import PostDiv from './Post/PostDiv';
 import ContextInfo from './ContextInfo/ContextInfo';
+import { addPostActionCreater, newChengeUpdate } from '../../Redux/state';
 
 const Context = (props) => {
 
     const addPost = () => {
-        props.dispatch({ type: 'ADD-POST' });
+        props.dispatch(addPostActionCreater());
     }    
 
     const onPostChange = () => {
         let text = messageText.current.value;
-        let action = { type: 'NEW-CHENGE-UPDATE', newText: text};
-        props.dispatch(action);
+        props.dispatch(newChengeUpdate(text));
     };
 
     let messageText = React.createRef();
