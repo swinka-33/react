@@ -1,6 +1,8 @@
 // Types :
 const ADD_POST = 'ADD-POST';
 const NEW_CHENGE_UPDATE = 'NEW-CHENGE-UPDATE';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 const store = {
     _state : {
@@ -14,12 +16,13 @@ const store = {
                 { id: '/Message/6', name: 'Sveta' }
             ],
             messages: [
-                { url: 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg', text: '/start' }
-            ]
+                // { url: 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg', text: '/start'}
+            ],
+            newMessageBody: ''
         },
         contextPage: {
             posts: [
-                { id: 1, imgLogoPost: 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg', text: '/start', like: '0'}
+                // { id: 1, imgLogoPost: 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg', text: '/start', like: '0'}
             ],
             newTextPosts: ''
         },
@@ -34,7 +37,7 @@ const store = {
     getState() {
         return this._state
     },
-    idKounter : 2,
+    idKounter : 0,
     noNameImg : 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg',
     _callSubscriber() {
         console.log('Can\'t update');
@@ -44,7 +47,7 @@ const store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             let newPost = {
                 id: this.idKounter,
                 imgLogoPost: this.noNameImg,
@@ -57,16 +60,28 @@ const store = {
             this._state.contextPage.posts.push(newPost);
             this._state.contextPage.newTextPosts = '';
             this._callSubscriber(store._state);
-        } else if (action.type === 'NEW-CHENGE-UPDATE') {
+        } else if (action.type === NEW_CHENGE_UPDATE) {
             this._state.contextPage.newTextPosts = action.newText;
+            this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.messagePage.newMessageBody = action.body;
+            this._callSubscriber(this._state);
+        } else if (action.type === SEND_MESSAGE) {
+            let body = this._state.messagePage.newMessageBody;
+            this._state.messagePage.newMessageBody = '';
+            this._state.messagePage.messages.push({
+                url: 'https://www.flaticon.com/svg/static/icons/svg/848/848043.svg',
+                text: body
+            });
             this._callSubscriber(this._state);
         }
     }
 };
 
 export const addPostActionCreater = () => ({ type: ADD_POST });
-
 export const newChengeUpdate = (text) => ({ type: NEW_CHENGE_UPDATE, newText: text});
+export const sendMessageCreater = () => ({ type: SEND_MESSAGE });
+export const updateMessageCreators = (text) => ({ type: UPDATE_NEW_MESSAGE_BODY, text: text});   
 
 export default store;
 window.store = store;
